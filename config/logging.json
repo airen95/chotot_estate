@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+      "simple": {
+        "format": "Log entry at: %(asctime)s : %(name)s : %(levelname)s : %(message)s"
+      }
+    },
+    "handlers": {
+      "crawler_file": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "level": "INFO",
+        "formatter": "simple",
+        "filename": "../logs/crawler.txt",
+        "maxBytes": 52428800,
+        "backupCount": 100,
+        "encoding": "utf-8"
+      },
+      "error_file": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "level": "INFO",
+        "formatter": "simple",
+        "filename": "../logs/error.txt",
+        "maxBytes": 52428800,
+        "backupCount": 100,
+        "encoding": "utf-8"
+      }
+    },
+    "loggers": {
+      "crawl_logger": {
+        "level": "DEBUG",
+        "handlers": ["crawler_file"]
+      },
+      "error_logger": {
+        "level": "DEBUG",
+        "handlers": ["error_file"]
+      }
+    }
+  }

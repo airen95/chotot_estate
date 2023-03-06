@@ -1,0 +1,4 @@
+omegaconf==2.3.0
+SQLAlchemy==1.4.5
+psycopg2-binary==2.9.5
+#*/15 * * * * cd /home/ec2-user/chotot_estate/src && /bin/python3 main_flow.py >> /home/ec2-user/chotot_estate/src/running.log 2>&1
